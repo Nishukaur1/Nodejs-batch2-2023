@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 5000
-
+//to retreive data
 app.use(express.urlencoded({'extended':true}))
 
 app.get("/",function(req,res){
@@ -31,6 +31,7 @@ app.post("/addcategory",(req,res)=>{
     })
 })
 
+//unknown route
 app.all("*",(req,res)=>{
     res.json({
         'status':404,
@@ -39,6 +40,7 @@ app.all("*",(req,res)=>{
     })
 })
 
+// port
 app.listen(port,()=>{
     console.log("server running at "+port)
 })
